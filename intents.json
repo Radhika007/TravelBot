@@ -1,0 +1,34 @@
+{
+    "intents": [
+        {
+            "tags": "greeting",
+            "patterns": ["Hi there","Hello","How are you?","What is up?"],
+            "responses": ["Hello","Im alright","Good to see you","How can I help you?"],
+            "context": ""
+        },
+        {
+            "tags": "goodbye",
+            "patterns": ["Goodbye","Bye","See you later"],
+            "responses": ["Bye","Goodbye","Come back again, Bye"],
+            "context": ""
+        },
+        {
+            "tags": "thanks",
+            "patterns": ["Thank you","thanks","Okay","Ok"],
+            "responses": ["My Pleasure","Welcome","Anytime"],
+            "context": ""
+        },
+        {
+            "tags": "no answer",
+            "patterns": [],
+            "responses": ["Sorry, can't unsderstand you","What?"],
+            "context": ""
+        },
+        {
+            "tags": "KnowMe",
+            "patterns": ["Who are you?","What are you?","What do you do?"],
+            "responses": ["I am a bot built to help you!"],
+            "context": ""
+        }
+    ]
+}
