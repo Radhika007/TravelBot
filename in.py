@@ -10,7 +10,7 @@ with open('moods') as file:
     for line in cr:
         Data.append(line)
 
-API_TOKEN = os.environ['TGI_API_TOKEN']
+API_TOKEN = "1259023928:AAGdw1z_tbsILyJdFja_HKzucX_eOrxe5Po"
 MOODS = [
     'Frustrated','Anxious','Bored','Sad','Happy'
 ]
@@ -40,11 +40,19 @@ class Task:
         return req.text
 
     def send_estcost(self,estcost):
-        req = requests.posts(
+        req = requests.post(
             'https://api.telegram.org/bot{token}/sendEstimatedCost'.format(token = API_TOKEN),
             json={"chat_id": self.chat_id,"price": PRICE}
         )
         return req.text
+
+    def send_image(chat_id,image_path, image_caption=" "):
+        data1 = {"chat_id": self.chat_id, "caption": image_caption}
+        url1 = "https://api.telegram.org/bot{token}/sendPhoto".format(token = API_token) 
+        with open(image_path,"rb") as image_file:
+            ret = requests.post(url, data=data, files={"photo": image_file})
+        return ret.json()
+
 
     def start(self):
         self.send_message("This TravBot is a simple travel bot that will suggest you some travel choices based on your mood. You can choose from these moods for now: " + ','.join(MOODS))
@@ -72,9 +80,6 @@ class Task:
         self.send_duration(nights,msg1_id)
         self.send_estcost(estcost,msg1_id)
 
-    def country(self):
-        self.send_message('If you have already have a place to visit then let us know.')
-
     def do(self):
         if self.text.startswith('/start'):
             self.start()
@@ -88,5 +93,3 @@ class Task:
             self.recommend("Happy")
         elif self.text.startswith('/sad'):
             self.recommend("Sad")
-        elif self.text.startswith('/country'):
-            self.country()
