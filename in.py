@@ -10,7 +10,7 @@ with open('moods') as file:
     for line in cr:
         Data.append(line)
 
-API_TOKEN = ""
+API_TOKEN = "1259023928:AAGdw1z_tbsILyJdFja_HKzucX_eOrxe5Po"
 MOODS = [
     'Frustrated','Anxious','Bored','Sad','Happy'
 ]
@@ -46,16 +46,16 @@ class Task:
         )
         return req.text
 
-    def send_image(chat_id,image_path, image_caption=" "):
-        data1 = {"chat_id": self.chat_id, "caption": image_caption}
-        url1 = "https://api.telegram.org/bot{token}/sendPhoto".format(token = API_token) 
-        with open(image_path,"rb") as image_file:
-            ret = requests.post(url, data=data, files={"photo": image_file})
-        return ret.json()
-
+    def send_location(self, lat, lng, rid):
+        req = requests.post(
+            'https://api.telegram.org/bot{token}/sendLocation'.format(token = API_TOKEN),
+            json={"chat_id": self.chat_id,"latitude":lat, "longitude":lng, "reply_to_message_id":rid}
+        )
+        return req.text
 
     def start(self):
         self.send_message("This TravBot is a simple travel bot that will suggest you some travel choices based on your mood. You can choose from these moods for now: " + ','.join(MOODS))
+        self.send_message("You can show how you are feeling by typing the mood after this "/" sign ")
 
     def recommend(self,mood):
         self.send_message('Will help you get started with your upcoming trip! You are feeling: ' + mood)
@@ -65,7 +65,7 @@ class Task:
         elif mood == 'Bored':
             r_index = 4 + r_index
         elif mood == 'Frustrated':
-            r_index = 7 + r_index
+            r_index = 7 + r_index 
         elif mood == 'Happy':
             r_index = 10 + r_index
         elif mood == 'Sad':
@@ -73,12 +73,16 @@ class Task:
         name = Data[r_index]['Destination']
         nights = Data[r_index]['Number of Nights']
         estcost = Data[r_index]['PRICE']
+        longitude = Data[r_index]['longitude']
+        latitude = Data[r_index]['latitude']
 
         msg1 = json.loads(self.send_message(name))
         msg1_id = msg1['result']['message_id']
 
         self.send_duration(nights,msg1_id)
         self.send_estcost(estcost,msg1_id)
+        
+        self.send_location(latitude,longitude,msg1_id)
 
     def do(self):
         if self.text.startswith('/start'):
