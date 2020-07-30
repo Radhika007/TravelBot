@@ -10,7 +10,7 @@ with open('moods') as file:
     for line in cr:
         Data.append(line)
 
-API_TOKEN = "1259023928:AAGdw1z_tbsILyJdFja_HKzucX_eOrxe5Po"
+API_TOKEN = ""
 MOODS = [
     'Frustrated','Anxious','Bored','Sad','Happy'
 ]
