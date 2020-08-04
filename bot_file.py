@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, redirect
 import requests
 
+import tg
 
 BOT_USERNAME = 'TravBot'
 
