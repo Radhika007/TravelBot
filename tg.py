@@ -65,7 +65,7 @@ class Task:
             "Will help you get started with your upcoming trip! "
             "You are feeling: " + mood)
         r_index = int(random.random() * LIMIT)
-        r_index += MOODS.index(mood) * LIMIT
+        r_index += MOODS.index(mood) 
         name = Data[r_index]['DESTINATION']
         nights = Data[r_index]['Number of Nights']
         estcost = Data[r_index]['PRICE']
