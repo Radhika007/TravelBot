@@ -1,17 +1,17 @@
 S.No.,MOOD,DESTINATION,Number of Nights,PRICE,WEBSITE,latitude,longitude
-1,Anxious,Australia,4,62999,holidayz.makemytrip.com,25.27,133
-2,Anxious,New Zealand,6,203990,yatra.com,40.9006,174.8860
-3,Anxious,Thailand,4,22000,sotc.in,15.8700,100.9925
-4,Bored,Bali,6,50517,holidayz.makemytrip.com,8.3405,115.0920
-5,Bored,Canada,5,107990,holidayz.makemytrip.com,56.1304,106.3468
-6,Bored,USA,9,99999,makemytrip.com,37.0902,95.7129
-7,Frustrated,Bahamas,5,130432,tripadvisor.com,25.0343,77.3963
-8,Frustrated,Maldives,3,45000,thomascook.in,3.2028,73.2207
-9,Frustrated,Mexico,7,260000,thomascook.in,23.6345,102.5528
-10,Happy,Denmark,9,20990,yatra.com,56.2639,9.5018
-11,Happy,Iceland,7,131747,sotc.in,64.9631,19.0208
-12,Happy,South Korea,5,82000,visit.korea.in,35.9078,127.7669
-13,Happy,Switzerland,6,113690,holidayz.makemytrip.com,46.8182,8.2275
-14,Sad,Croatia,7,93990,yatra.com,45.1000,15.2000
-15,Sad,Italy,10,172999,traveltriangle.com,41.8719,12.5674
-16,Sad,Tukey,5,119140,thomascook.in,38.9637,35.2433
+1,Anxious,Australia,4,Rs 62999,holidayz.makemytrip.com,25.27,133
+2,Anxious,New Zealand,6,Rs 203990,yatra.com,40.9006,174.8860
+3,Anxious,Thailand,4,Rs 22000,sotc.in,15.8700,100.9925
+4,Bored,Bali,6,Rs 50517,holidayz.makemytrip.com,8.3405,115.0920
+5,Bored,Canada,5,Rs 107990,holidayz.makemytrip.com,56.1304,106.3468
+6,Bored,USA,9,Rs 99999,makemytrip.com,37.0902,95.7129
+7,Frustrated,Bahamas,5,Rs 130432,tripadvisor.com,25.0343,77.3963
+8,Frustrated,Maldives,3,Rs 45000,thomascook.in,3.2028,73.2207
+9,Frustrated,Mexico,7,Rs 260000,thomascook.in,23.6345,102.5528
+10,Happy,Denmark,9,Rs 20990,yatra.com,56.2639,9.5018
+11,Happy,Iceland,7,Rs 131747,sotc.in,64.9631,19.0208
+12,Happy,South Korea,5,Rs 82000,visit.korea.in,35.9078,127.7669
+13,Happy,Switzerland,6,Rs 113690,holidayz.makemytrip.com,46.8182,8.2275
+14,Sad,Croatia,7,Rs 93990,yatra.com,45.1000,15.2000
+15,Sad,Italy,10,Rs 172999,traveltriangle.com,41.8719,12.5674
+16,Sad,Tukey,5,Rs 119140,thomascook.in,38.9637,35.2433
