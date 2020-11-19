@@ -44,7 +44,7 @@ class Task:
 
     def send_location(self, lat, lng, rid):
         req = requests.post(
-            'https://api.telegram.org/bot{token}/sendMessage'.format(
+            'https://api.telegram.org/bot{token}/sendLocation'.format(
                 token=API_TOKEN),
             json={"chat_id": self.chat_id, "latitude": lat,
                   "longitude": lng, "reply_to_message_id": rid}
