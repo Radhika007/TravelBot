@@ -17,7 +17,6 @@ with open('moods.csv') as file:
     for line in cr:
         Data.append(line)
 
-
 class Task:
     chat_id = None
     text = None
@@ -53,19 +52,28 @@ class Task:
 
     def start(self):
         self.send_message(
-            "This TravBot is a simple travel bot that will suggest"
-            "you some travelchoices based on your mood. "
+            "This TRAVBOT IS A SIMPLE TRAVEL BOT THAT WILL SUGGEST  "
+            "YOU SOME TRAVEL CHOICES BASED ON YOUR MOOD. "
             "You can choose from these moods for now: " + ','.join(MOODS))
         self.send_message(
             "You can show how you are feeling by typing the"
-            " mood after this \"/\" sign ")
+            " mood after this \"/recommend\" sign ")
 
     def recommend(self, mood):
         self.send_message(
             "Will help you get started with your upcoming trip! "
-            "You are feeling: " + mood)
+            "I have found an amazing place for you to visit since you are feeling " + mood)
         r_index = int(random.random() * LIMIT)
-        r_index += MOODS.index(mood) 
+        if mood == 'Anxious':
+            r_index = 0 + r_index
+        elif mood == 'Bored':
+            r_index = 3 + r_index
+        elif mood == 'Frustrated':
+            r_index = 6 + r_index
+        elif mood == 'Happy':
+            r_index = 9 + r_index
+        elif mood == 'Sad':
+            r_index = 13 + r_index
         name = Data[r_index]['DESTINATION']
         nights = Data[r_index]['Number of Nights']
         estcost = Data[r_index]['PRICE']
@@ -95,3 +103,9 @@ class Task:
             self.recommend("Happy")
         elif self.text.startswith('/recommend sad'):
             self.recommend("Sad")
+        elif self.text.startswith('Thank you'):
+            self.send_message("Thank you for using TravBot:) Hope you enjoy your vacation!")
+        elif self.text.startswith('Hello'):
+            self.send_message("Hey, I am TravBot type /start to start me.")
+        elif self.text.startswith('Okay'):
+            self.send_message("Okay, Thank you for using TravBot:)")
